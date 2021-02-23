@@ -37,9 +37,12 @@ namespace LiquidApi
 
             services
                 .AddSingleton<CustomerFactory>()
+
                 .AddTransient<AddressRepository>()
                 .AddTransient<CustomerRepository>()
-                .AddTransient<CustomerService>();
+                
+                .AddTransient<CustomerService>()
+                .AddTransient<AddressService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
