@@ -17,3 +17,11 @@
 - Create a CustomerFactory that creates a Controllers.Responses.Address and Controllers.Responses.Customer from the Models.Address and Models.Customer objects
 
     TIME: 7 minutes
+
+- Create a CustomerService class that uses the CustomerRepository and CustomerFactory that were created and registered in DI with the following methods:
+  GetAddressesByCountry(string countryName) -> return List<Controllers.Responses.Address>
+  GetCustomerByFirstAndLastName(string firstName, string lastName) -> return Controllers.Responses.Customer
+
+    During this task setup DI for repositories, factory, service and controller
+
+    TIME: 25
