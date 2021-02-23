@@ -14,3 +14,6 @@
 
     TIME: negligeable
 
+- Create a CustomerFactory that creates a Controllers.Responses.Address and Controllers.Responses.Customer from the Models.Address and Models.Customer objects
+
+    TIME: 7 minutes
