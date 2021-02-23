@@ -8,28 +8,22 @@ namespace LiquidApi.Services
 {
     public class CustomerService
     {
-        private readonly CustomerFactory _customerFactory;
-        private readonly CustomerRepository _customerRepository;
-        private readonly AddressRepository _addressRepository;
+        private readonly CustomerFactory _factory;
+        private readonly CustomerRepository _repository;
 
-        public CustomerService(CustomerRepository customerRepository, AddressRepository addressRepository, CustomerFactory customerFactory)
+        public CustomerService(CustomerRepository repository, CustomerFactory factory)
         {
-            _customerRepository = customerRepository;
-            _addressRepository = addressRepository;
-            _customerFactory = customerFactory;
-        }
+            _repository = repository;
 
-        public async Task<List<Controllers.Responses.Address>> GetAddressesByCountry(string country)
-        {
-            var addresses =  await _addressRepository.GetAddressByCountry(country);
-            return addresses.Select(x => _customerFactory.CreateAddressResponse(x)).ToList();
+            _factory = factory;
         }
 
 
         public async Task<Controllers.Responses.Customer> GetCustomerByFirstAndLastName(string firstName, string lastName)
         {
-            var customer =  await _customerRepository.GetCustomerByFirstAndLastName(firstName, lastName);
-            return customer == null ? null : _customerFactory.CreateCustomerResponse(customer);
+            var customer =  await _repository.GetCustomerByFirstAndLastName(firstName, lastName);
+            return customer == null ? null : _factory.CreateCustomerResponse(customer);
         }
     }
+
 }
