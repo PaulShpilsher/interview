@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace LiquidApi.Controllers
 {
     [ApiController]
-    [Route("[customers]")]
+    [Route("customers")]
     public class CustomerController : ControllerBase
     {
         private readonly ILogger<CustomerController> _logger;
