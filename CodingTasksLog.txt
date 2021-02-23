@@ -25,3 +25,10 @@
     During this task setup DI for repositories, factory, service and controller
 
     TIME: 25
+
+- Fill out the CustomerController and add two endpoints:
+  customers/searches [POST]
+  should take a newly created request object and return a matching Customer using the repository, factory, or service as appropriate
+  
+  customers/addresses/[COUNTRYNAME]/searches [GET]
+  should return matching addresses using the repository, factory, or service as appropriate
