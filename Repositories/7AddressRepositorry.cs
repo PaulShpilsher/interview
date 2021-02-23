@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LiquidApi.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace LiquidApi.Repositories
 {
@@ -14,18 +15,11 @@ namespace LiquidApi.Repositories
             _context = context;
         }
 
-        public List<Models.Address> GetAddressByCountry(string country)
+        public async Task<List<Models.Address>> GetAddressByCountry(string country)
         {
-            var addresses = _context.Addresses.Where(x => x.Country == country);
-            if(addresses.Any())
-            {
-                return addresses.ToList();
-            }
-            else
-            {
-                return new List<Models.Address>(0);
-            }
-            
+            return await _context.Addresses
+                .Where(x => country.Equals(x.Country, StringComparison.OrdinalIgnoreCase))
+                .ToListAsync();
         }
     }
 }

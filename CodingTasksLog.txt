@@ -1,0 +1,7 @@
+- Add method GetAddressesByCountry that takes a country string as a parameter and returns a List<Address> of matching addresses (case-insensitive) in the context using LINQ, or an empty List if none found
+    Did this online.
+    Additions:
+    Fixed case insensitivity (missed that one from online coding)
+    Changed to be asynchronous
+    
+    TIME: 2 minutes
