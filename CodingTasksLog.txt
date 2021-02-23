@@ -24,7 +24,7 @@
 
     During this task setup DI for repositories, factory, service and controller
 
-    TIME: 25
+    TIME: 25m
 
 - Fill out the CustomerController and add two endpoints:
   customers/searches [POST]
@@ -32,3 +32,7 @@
   
   customers/addresses/[COUNTRYNAME]/searches [GET]
   should return matching addresses using the repository, factory, or service as appropriate
+
+  Run the service, verify it works.
+
+  TIME: 1h
