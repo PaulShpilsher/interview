@@ -40,6 +40,10 @@ namespace LiquidApi.Controllers
             return customer;
         }
 
-
+        [HttpGet("addresses/{country}/searches")]
+        public async Task<ActionResult<IEnumerable<Responses.Address>>> GetAddressByCountry(string country)
+        {
+            return await _service.GetAddressesByCountry(country);
+        }
     }
 }
