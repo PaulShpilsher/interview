@@ -1,4 +1,7 @@
 using LiquidApi.Context;
+using LiquidApi.Factories;
+using LiquidApi.Repositories;
+using LiquidApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,9 +30,16 @@ namespace LiquidApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging();
             services.AddControllers();
 
             services.AddDbContext<LiquidApiContext>(opt => opt.UseInMemoryDatabase("LiquidDb", null));
+
+            services
+                .AddSingleton<CustomerFactory>()
+                .AddTransient<AddressRepository>()
+                .AddTransient<CustomerRepository>()
+                .AddTransient<CustomerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
