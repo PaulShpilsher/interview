@@ -1,12 +1,12 @@
+using LiquidApi.Controllers.Responses;
 
-namespace LiquidApi.Controllers
+namespace LiquidApi.Factories
 {
-
-    internal static class  CustomerFactory
+    public class  CustomerFactory
     {
-        public static Responses.Customer CreateResponseCustomer(Models.Customer customer)
+        public Customer CreateCustomerResponse(Models.Customer customer)
         {
-            return  new Responses.Customer
+            return new Customer
             {
                 Id = customer.Id,
                 FirstName = customer.FirstName,
@@ -15,9 +15,9 @@ namespace LiquidApi.Controllers
             };
         }
 
-        public static Responses.Address CreateResponseAddress(Models.Address address)
+        public Address CreateAddressResponse(Models.Address address)
         {
-            return new Responses.Address
+            return new Address
             {
                 Id = address.Id,
                 Line1 = address.Line1,
