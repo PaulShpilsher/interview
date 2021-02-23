@@ -4,8 +4,13 @@
     Fixed case insensitivity (missed that one from online coding)
     Changed to be asynchronous
     
-    TIME: 2 minutes
+    TIME: negligeable
 
 - Add method GetCustomerByFirstAndLastName that takes a first and last name string as parameters and returns a single Customer or null if none found using LINQ
+- Add method GetCustomerById that takes a Guid and returns a single Customer or null if none found using LINQ
     Done online
+    Additions:
+    Changed to be asynchronous
+
+    TIME: negligeable
 

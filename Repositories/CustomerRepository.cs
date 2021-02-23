@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LiquidApi.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace LiquidApi.Repositories
 {
@@ -15,15 +16,16 @@ namespace LiquidApi.Repositories
         }
     
 
-        public Models.Customer GetCustomerByFirstAndLastName(string fistName, string LastName)
+        public async Task<Models.Customer> GetCustomerByFirstAndLastName(string fistName, string LastName)
         {
-            return _context.Customers.FirstOrDefault( x=> (x.FirstName == fistName && x.LastName == LastName));
+            return await _context.Customers
+                .FirstOrDefaultAsync( x=> (x.FirstName == fistName && x.LastName == LastName));
         }
 
 
-        public Models.Customer GetCustomerById(Guid id)
+        public async Task<Models.Customer> GetCustomerById(Guid id)
         {
-            return _context.Customers.FirstOrDefault( x=> x.Id == id);
+            return await _context.Customers.FirstOrDefaultAsync( x => x.Id == id);
         }
     }
 }
