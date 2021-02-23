@@ -37,6 +37,7 @@ namespace LiquidApi
 
             services
                 .AddSingleton<CustomerFactory>()
+                .AddSingleton<AddressFactory>()
 
                 .AddTransient<AddressRepository>()
                 .AddTransient<CustomerRepository>()

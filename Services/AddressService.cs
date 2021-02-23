@@ -11,7 +11,7 @@ namespace LiquidApi.Services
         private readonly AddressFactory _factory;
         private readonly AddressRepository _repository;
 
-        AddressService(AddressRepository repository, AddressFactory factory)
+        public AddressService(AddressRepository repository, AddressFactory factory)
         {
 
             _repository = repository;
