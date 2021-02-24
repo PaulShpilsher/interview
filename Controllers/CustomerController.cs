@@ -34,7 +34,7 @@ namespace LiquidApi.Controllers
             var customer = await _service.GetCustomerByFirstAndLastName(req.FirstName, req.LastName);
             if(customer == null)
             {
-                return NoContent();
+                return NotFound();
             }
 
             return customer;
